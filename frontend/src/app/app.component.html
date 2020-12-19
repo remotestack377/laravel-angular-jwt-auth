@@ -1,0 +1,12 @@
+<div class="container">
+  <h2>Laravel Angular JWT Authenticaiton Examlpe</h2>
+  <nav>
+    <a routerLink="/user-profile" *ngIf="isLoggedin">Profile</a>
+    <a *ngIf="!isLoggedin" routerLink="/signin">Log in</a>
+    <a routerLink="/signup">Sign up</a>
+  </nav>
+
+  <button class="btn btn-danger" (click)="logOut()" *ngIf="isLoggedin">Sign-out</button>
+</div>
+
+<router-outlet></router-outlet>

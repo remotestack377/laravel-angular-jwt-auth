@@ -1,0 +1,41 @@
+<form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+    <h2 class="mb-3 text-center">Signup</h2>
+  
+    <div class="form-group">
+      <label>Name</label>
+      <input type="text" class="form-control" formControlName="name">
+  
+      <div *ngIf="err?.name" class="alert alert-danger mt-3">
+        {{ err?.name }}
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" class="form-control" formControlName="email">
+  
+      <div *ngIf="err?.email" class="alert alert-danger mt-3">
+        {{ err?.email }}
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" class="form-control" formControlName="password">
+  
+      <div *ngIf="err?.password" class="alert alert-danger mt-3">
+        {{ err?.password }}
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label>Confirm Password</label>
+      <input type="password" class="form-control" formControlName="password_confirmation">
+  
+      <div *ngIf="err?.password_confirmation" class="alert alert-danger mt-3">
+        {{ err?.password_confirmation }}
+      </div>
+    </div>
+  
+    <button type="submit" class="btn btn-success">Signup</button>
+  </form>
